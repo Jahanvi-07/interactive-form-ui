@@ -1,0 +1,15 @@
+{
+  "name": "cognifyz-intermediate-task4",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Complex form validation, dynamic DOM, and routing with unit tests",
+  "scripts": {
+    "test": "jest --colors",
+    "test:watch": "jest --watchAll --colors"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+
+

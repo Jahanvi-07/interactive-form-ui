@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Task 4 - Complex Validation & Routing</title>
+    <meta name="description" content="Demo app showcasing complex form validation, dynamic DOM updates, and client-side routing.">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="color-scheme" content="dark light">
+    <link rel="canonical" href="/">
+    <link rel="icon" href="favicon.ico">
+    <meta property="og:title" content="Intermediate Task 4 - Complex Validation & Routing">
+    <meta property="og:description" content="Demo app showcasing complex form validation, dynamic DOM updates, and client-side routing.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#app">Skip to main content</a>
+    <header class="header">
+        <nav class="nav">
+            <a href="#/" class="nav__brand">Cognifyz</a>
+            <div class="nav__links">
+                <a href="#/" data-link>Home</a>
+                <a href="#/form" data-link>Form</a>
+                <a href="#/about" data-link>About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="app" class="app">
+        <!-- Views injected here by the router -->
+    </main>
+
+    <div id="toast-root" aria-live="polite" aria-atomic="true" hidden></div>
+
+    <noscript>
+        <div class="view" role="alert">This app needs JavaScript enabled to function properly.</div>
+    </noscript>
+
+    <template id="view-home">
+        <section class="view">
+            <h1>Welcome</h1>
+            <p>Use the navigation to explore the app. Try the form to see complex validation and dynamic UI.</p>
+            <button id="home-cta" class="btn">Go to Form</button>
+        </section>
+    </template>
+
+    <template id="view-form">
+        <section class="view">
+            <h1>Create Account</h1>
+            <form id="signup-form" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <div class="input-with-addon">
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                        <span id="email-spinner" class="spinner" hidden></span>
+                    </div>
+                    <div class="hint">We'll never share your email. <span id="email-status" class="muted"></span></div>
+                    <div class="error" data-error-for="email"></div>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="inline-row">
+                        <input id="password" name="password" type="password" autocomplete="new-password" required>
+                        <button type="button" id="pw-toggle" class="btn btn--ghost" aria-label="Toggle password visibility">Show</button>
+                        <button type="button" id="pw-generate" class="btn btn--ghost" aria-label="Generate strong password">Generate</button>
+                    </div>
+                    <div class="pw-meter" aria-hidden="true">
+                        <div class="pw-meter__bar" data-strength-bar></div>
+                    </div>
+                    <ul class="pw-criteria" id="password-criteria">
+                        <li data-criteria="length">At least 12 characters</li>
+                        <li data-criteria="upper">Contains uppercase letter</li>
+                        <li data-criteria="lower">Contains lowercase letter</li>
+                        <li data-criteria="digit">Contains a number</li>
+                        <li data-criteria="symbol">Contains a symbol (!@#$%^&* etc.)</li>
+                        <li data-criteria="common">Not a common/compromised password</li>
+                    </ul>
+                    <ul class="pw-criteria" id="password-suggestions"></ul>
+                    <div class="error" data-error-for="password"></div>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required>
+                    <div class="error" data-error-for="confirmPassword"></div>
+                </div>
+
+                <div class="field">
+                    <label>
+                        <input id="terms" name="terms" type="checkbox" required>
+                        I agree to the terms and conditions
+                    </label>
+                    <div class="error" data-error-for="terms"></div>
+                </div>
+
+                <button class="btn" type="submit">Create account</button>
+            </form>
+
+            <div id="form-success" class="success" hidden>
+                🎉 Account created! Welcome aboard.
+            </div>
+        </section>
+    </template>
+
+    <template id="view-about">
+        <section class="view">
+            <h1>About</h1>
+            <p>This demo showcases complex client-side validation, dynamic DOM updates, and a tiny router.</p>
+        </section>
+    </template>
+
+    <template id="view-404">
+        <section class="view">
+            <h1>Not Found</h1>
+            <p>The page you’re looking for doesn’t exist.</p>
+            <p><a class="btn" href="#/">Go Home</a></p>
+        </section>
+    </template>
+
+    <script src="app.js" defer></script>
+    <footer class="app-footer" role="contentinfo" style="max-width:960px;margin:24px auto 48px;padding:0 16px;color:#94a3b8;font-size:12px;">
+        <span>© <span id="year"></span> Cognifyz Demo</span>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+</body>
+</html>
+
+
