@@ -58,5 +58,19 @@ This project demonstrates how to combine **beautiful frontend design** with **in
 * Frontend validation templates for full-stack apps
 
 
+## 📸 Screenshots
+<img width="1032" height="1023" alt="Image" src="https://github.com/user-attachments/assets/76353dec-e3cb-4f4c-a39f-9eb641f21921" />
 
+---
+
+<img width="1038" height="1033" alt="Image" src="https://github.com/user-attachments/assets/9d8d262d-36d3-4776-9695-aac8063fc847" />
+
+---
+<img width="1037" height="1020" alt="Image" src="https://github.com/user-attachments/assets/1fbf3952-1df0-4fb0-8aa3-fa8fe1c391f5" />
+
+---
+<img width="1037" height="1022" alt="Image" src="https://github.com/user-attachments/assets/5cd5d895-7b40-496a-9ef2-ea5fdc5921f9" />
+
+---
+<img width="1030" height="1021" alt="Image" src="https://github.com/user-attachments/assets/3a629b7b-4445-4387-b763-2a0e4329163d" />
 
