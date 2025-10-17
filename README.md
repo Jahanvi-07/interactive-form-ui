@@ -1,7 +1,5 @@
 # 🪶 interactive-form-ui – form-validator-pro
 
-## 🎯 **Interactive Form UI – Form Validator Pro**
-
 ## 🧩 Overview
 
 **Interactive Form UI – Form Validator Pro** is a modern and dynamic web application that focuses on **creating clean, responsive, and secure form interfaces**.
